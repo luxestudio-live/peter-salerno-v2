@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --midnight: #171716;
+  --bone: #F3F0E9;
+  --sand: #E7DED0;
+  --vermilion: #BF4E36;
+  --gold: #B49468;
+  --grey: #898780;
+  --champagne: #FAF7F2;
+  --charcoal: #222220;
+
+  --background: var(--bone);
+  --foreground: var(--midnight);
+  --card: var(--sand);
+  --card-foreground: var(--midnight);
+  --border: rgba(23, 23, 22, 0.12);
+}
+
+@theme {
+  --color-midnight: var(--midnight);
+  --color-bone: var(--bone);
+  --color-sand: var(--sand);
+  --color-vermilion: var(--vermilion);
+  --color-gold: var(--gold);
+  --color-grey: var(--grey);
+  --color-champagne: var(--champagne);
+  --color-charcoal: var(--charcoal);
+
+  --font-serif: var(--font-cormorant), Georgia, Cambria, serif;
+  --font-sans: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: var(--vermilion);
+  color: var(--champagne);
+}
+
+/* Subtle Film Grain Noise Texture */
+.film-grain {
+  position: relative;
+}
+.film-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(23, 23, 22, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+  opacity: 0.6;
+}
+
+/* Editorial Drop Cap */
+.drop-cap::first-letter {
+  font-family: var(--font-serif);
+  float: left;
+  font-size: 4.5rem;
+  line-height: 0.8;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  color: var(--vermilion);
+  font-weight: 700;
+}
+
+/* Kinetic reveal line */
+.line-reveal {
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* 3D Book perspective styles */
+.perspective-1000 {
+  perspective: 1200px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bone);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--grey);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vermilion);
+}
