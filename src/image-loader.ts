@@ -12,3 +12,4 @@ export default function customImageLoader({
   const cleanSrc = src.startsWith('/') ? src : `/${src}`;
   return `${basePath}${cleanSrc}`;
 }
+
