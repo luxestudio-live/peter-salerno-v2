@@ -33,6 +33,7 @@ jobs:
       - name: Build with Next.js (Static Export)
         env:
           BASE_PATH: ${{ vars.BASE_PATH || '/peter-salerno-v2' }}
+          NEXT_PUBLIC_BASE_PATH: ${{ vars.BASE_PATH || '/peter-salerno-v2' }}
         run: npm run build
 
       - name: Disable Jekyll
