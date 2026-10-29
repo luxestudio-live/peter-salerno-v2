@@ -27,16 +27,12 @@ jobs:
           node-version: "20"
           cache: "npm"
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-
       - name: Install dependencies
         run: npm ci || npm install
 
       - name: Build with Next.js (Static Export)
         env:
-          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          BASE_PATH: ${{ vars.BASE_PATH || '/peter-salerno-v2' }}
         run: npm run build
 
       - name: Disable Jekyll
