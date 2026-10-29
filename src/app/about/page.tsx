@@ -110,12 +110,12 @@ export default function AboutPage() {
 
           <div className="lg:col-span-4 relative aspect-3/4 rounded-2xl overflow-hidden shadow-2xl border-4 border-sand">
             <Image
-              src="/images/peter-salerno-hero.jpg"
+              src="/images/peter-salerno-actual.jpg"
               alt="Portrait of Peter Salerno"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 30vw"
-              className="object-cover object-center"
+              className="object-cover object-top"
             />
           </div>
         </div>

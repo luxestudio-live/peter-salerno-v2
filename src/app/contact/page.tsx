@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { ContactForm } from '@/components/ContactForm';
 import { Mail, Phone, MapPin, Sparkles, Clock, Globe } from 'lucide-react';
 
@@ -35,9 +36,25 @@ export default function ContactPage() {
           {/* Left Column: Direct Office Information */}
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-28">
             <div className="p-8 rounded-3xl bg-sand/40 border border-midnight/10 space-y-6 shadow-sm">
-              <h2 className="font-serif text-2xl font-bold text-midnight">
-                Executive Office
-              </h2>
+              <div className="flex items-center space-x-4 pb-5 border-b border-midnight/10">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-vermilion shrink-0 shadow-md">
+                  <Image
+                    src="/images/peter-salerno-actual.jpg"
+                    alt="Peter Salerno"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div>
+                  <h2 className="font-serif text-xl font-bold text-midnight leading-tight">
+                    Peter Salerno
+                  </h2>
+                  <div className="flex items-center space-x-2 text-[11px] font-mono text-emerald-700 mt-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse inline-block" />
+                    <span>Booking 2026/2027 Keynotes</span>
+                  </div>
+                </div>
+              </div>
 
               <div className="space-y-4 text-sm font-sans text-midnight/80">
                 <div className="flex items-start space-x-3">

@@ -52,8 +52,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jakarta.variable} scroll-smooth`}>
-      <body className="bg-bone text-midnight antialiased min-h-screen flex flex-col selection:bg-vermilion selection:text-champagne font-sans">
+    <html lang="en" className={`${cormorant.variable} ${jakarta.variable} scroll-smooth`} suppressHydrationWarning>
+      <body className="bg-bone text-midnight antialiased min-h-screen flex flex-col selection:bg-vermilion selection:text-champagne font-sans" suppressHydrationWarning>
         <AudioProvider>
           <SmoothScroll>
             <CustomCursor />

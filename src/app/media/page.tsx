@@ -130,7 +130,7 @@ export default function MediaPage() {
             {[
               {
                 title: 'Official Studio Portrait',
-                src: '/images/peter-salerno-hero.jpg',
+                src: '/images/peter-salerno-actual.jpg',
                 aspect: 'aspect-3/4',
                 desc: 'Print-ready editorial close-up'
               },
@@ -154,7 +154,7 @@ export default function MediaPage() {
                     alt={img.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover object-center"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="flex items-center justify-between pt-1">

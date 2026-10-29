@@ -149,12 +149,12 @@ export default function HomePage() {
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md aspect-3/4 rounded-2xl overflow-hidden shadow-2xl border-4 border-bone group">
               <Image
-                src="/images/peter-salerno-hero.jpg"
+                src="/images/peter-salerno-actual.jpg"
                 alt="Peter Salerno - The Man With The Magic Message"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
               />
               {/* Subtle gradient vignette overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-80" />
@@ -400,6 +400,7 @@ export default function HomePage() {
                 <button
                   onClick={() => playEpisode(featuredEpisode)}
                   className="px-6 py-3 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-gold transition-colors flex items-center space-x-2 shadow-lg"
+                  suppressHydrationWarning
                 >
                   {isPlaying && currentEpisode?.slug === featuredEpisode.slug ? (
                     <>

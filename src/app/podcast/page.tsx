@@ -148,6 +148,7 @@ export default function PodcastPage() {
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search episodes or guests..."
               className="w-full pl-9 pr-4 py-2 rounded-full bg-charcoal border border-bone/15 text-xs text-bone placeholder:text-grey focus:outline-none focus:border-gold"
+              suppressHydrationWarning
             />
           </div>
         </div>

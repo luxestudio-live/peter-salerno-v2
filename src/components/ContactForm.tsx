@@ -69,7 +69,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8 bg-bone border border-midnight/10 p-8 sm:p-12 rounded-2xl shadow-xl">
+    <form onSubmit={handleSubmit} className="space-y-8 bg-bone border border-midnight/10 p-8 sm:p-12 rounded-2xl shadow-xl" suppressHydrationWarning>
       {/* 1. Select Enquiry Type (Editorial Segmented Selector) */}
       <div className="space-y-3">
         <label className="text-xs uppercase tracking-widest font-mono text-grey block">
@@ -115,6 +115,7 @@ export function ContactForm() {
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="e.g. Eleanor Vance"
               className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+              suppressHydrationWarning
             />
           </div>
           <div>
@@ -126,6 +127,7 @@ export function ContactForm() {
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="e.g. eleanor@organization.com"
               className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+              suppressHydrationWarning
             />
           </div>
           <div>
@@ -136,6 +138,7 @@ export function ContactForm() {
               onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
               placeholder="e.g. Australasian Executive Council"
               className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+              suppressHydrationWarning
             />
           </div>
           <div>
@@ -146,6 +149,7 @@ export function ContactForm() {
               onChange={(e) => setFormData({ ...formData, role: e.target.value })}
               placeholder="e.g. VP of People & Culture"
               className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+              suppressHydrationWarning
             />
           </div>
         </div>
@@ -165,6 +169,7 @@ export function ContactForm() {
                 value={formData.eventDate}
                 onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
                 className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight focus:outline-none focus:border-vermilion"
+                suppressHydrationWarning
               />
             </div>
             <div>
@@ -173,6 +178,7 @@ export function ContactForm() {
                 value={formData.estimatedAudience}
                 onChange={(e) => setFormData({ ...formData, estimatedAudience: e.target.value })}
                 className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight focus:outline-none focus:border-vermilion"
+                suppressHydrationWarning
               >
                 <option value="">Select range...</option>
                 <option value="Under 50">Executive / Intimate (&lt; 50)</option>
@@ -189,6 +195,7 @@ export function ContactForm() {
                 onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                 placeholder="e.g. Sydney, Australia"
                 className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+                suppressHydrationWarning
               />
             </div>
           </div>
@@ -199,6 +206,7 @@ export function ContactForm() {
               value={formData.selectedTopic}
               onChange={(e) => setFormData({ ...formData, selectedTopic: e.target.value })}
               className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight focus:outline-none focus:border-vermilion"
+              suppressHydrationWarning
             >
               {SPEAKING_TOPICS.map((topic) => (
                 <option key={topic.slug} value={topic.slug}>
@@ -222,6 +230,7 @@ export function ContactForm() {
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           placeholder="Describe your audience, team context, goals, or what outcome would make this engagement an extraordinary success..."
           className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+          suppressHydrationWarning
         />
       </div>
 
@@ -229,6 +238,7 @@ export function ContactForm() {
         type="submit"
         disabled={isSubmitting}
         className="w-full py-4 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-midnight transition-colors duration-300 shadow-xl flex items-center justify-center space-x-2"
+        suppressHydrationWarning
       >
         <span>{isSubmitting ? 'Transmitting Enquiry...' : 'Transmit Enquiry to Peter’s Office'}</span>
         <ArrowRight className="w-4 h-4" />

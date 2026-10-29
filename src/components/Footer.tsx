@@ -106,7 +106,7 @@ export function Footer() {
                 <span>You are subscribed to Peter’s reflections.</span>
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="space-y-2">
+              <form onSubmit={handleSubscribe} className="space-y-2" suppressHydrationWarning>
                 <input
                   type="email"
                   required
@@ -114,10 +114,12 @@ export function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-2.5 rounded-full bg-charcoal border border-bone/15 text-xs text-bone placeholder:text-grey focus:outline-none focus:border-vermilion"
+                  suppressHydrationWarning
                 />
                 <button
                   type="submit"
                   className="w-full px-4 py-2.5 rounded-full bg-bone text-midnight text-xs uppercase tracking-widest font-bold hover:bg-gold transition-colors"
+                  suppressHydrationWarning
                 >
                   Join Reflections
                 </button>

@@ -169,6 +169,7 @@ export function AudioPlayerBar() {
               onChange={(e) => setVolume(parseFloat(e.target.value))}
               className="w-16 h-1 bg-charcoal rounded-lg appearance-none cursor-pointer accent-vermilion"
               aria-label="Audio Volume Slider"
+              suppressHydrationWarning
             />
           </div>
 
