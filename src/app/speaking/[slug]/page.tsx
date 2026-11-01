@@ -58,7 +58,7 @@ export default async function SpeakingTopicPage({
 
         {/* Thematic Quote Banner */}
         <div className="p-6 sm:p-8 rounded-2xl bg-sand/50 border border-sand space-y-2">
-          <span className="text-[10px] uppercase font-mono tracking-widest text-vermilion font-bold block">
+          <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block">
             Core Thematic Axiom
           </span>
           <blockquote className="font-serif text-xl sm:text-2xl font-bold text-midnight italic leading-snug">
@@ -133,21 +133,21 @@ export default async function SpeakingTopicPage({
         </div>
 
         {/* In-Page Booking Callout */}
-        <div className="p-8 sm:p-10 rounded-2xl bg-midnight text-bone flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+        <div className="p-8 sm:p-12 rounded-3xl bg-[#EBE4D5] border-2 border-midnight/15 text-midnight flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="space-y-1 text-center sm:text-left">
-            <span className="text-[10px] uppercase font-mono tracking-widest text-gold block">
+            <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block mb-1">
               Direct Engagement
             </span>
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-midnight">
               Book "{topic.title}"
             </h3>
-            <p className="text-xs text-grey">
+            <p className="text-sm sm:text-base text-midnight/80 font-sans">
               Schedule an executive conversation to tailor this keynote for your convention.
             </p>
           </div>
           <Link
             href={`/contact?topic=${topic.slug}`}
-            className="px-8 py-3.5 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-gold transition-colors shrink-0 inline-flex items-center space-x-2"
+            className="px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors shrink-0 inline-flex items-center space-x-2 shadow-lg"
           >
             <span>Inquire for Your Date</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -172,11 +172,11 @@ export default async function SpeakingTopicPage({
                 <h4 className="font-serif text-xl font-bold text-midnight group-hover:text-vermilion transition-colors">
                   {rel.title}
                 </h4>
-                <p className="text-xs text-midnight/70 font-sans line-clamp-2">
+                <p className="text-sm text-midnight/75 font-sans line-clamp-2">
                   {rel.shortDescription}
                 </p>
               </div>
-              <span className="text-[11px] font-mono uppercase tracking-wider text-grey group-hover:text-midnight mt-4 block">
+              <span className="text-xs font-mono uppercase tracking-wider text-vermilion font-bold group-hover:text-midnight mt-4 block">
                 Read Briefing →
               </span>
             </Link>

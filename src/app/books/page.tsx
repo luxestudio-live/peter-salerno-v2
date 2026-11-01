@@ -58,12 +58,12 @@ export default function BooksPage() {
                   {book.subtitle}
                 </p>
 
-                <p className="text-sm text-midnight/80 font-sans leading-relaxed">
+                <p className="text-base text-midnight/80 font-sans leading-relaxed">
                   {book.synopsis}
                 </p>
 
                 {/* Excerpt callout */}
-                <div className="p-4 rounded-xl bg-bone border border-midnight/10 text-xs italic font-serif text-midnight/90 leading-relaxed">
+                <div className="p-4 rounded-xl bg-bone border border-midnight/10 text-sm sm:text-base italic font-serif text-midnight/90 leading-relaxed">
                   "{book.excerpt.slice(0, 180)}..."
                 </div>
 
@@ -72,7 +72,7 @@ export default function BooksPage() {
                   {book.themes.map((theme) => (
                     <span
                       key={theme}
-                      className="px-2.5 py-1 rounded-sm bg-sand/60 text-[10px] font-mono uppercase tracking-wider text-midnight"
+                      className="px-3 py-1 rounded-sm bg-sand/60 text-xs font-mono uppercase tracking-wider text-midnight font-bold"
                     >
                       {theme}
                     </span>
@@ -82,7 +82,7 @@ export default function BooksPage() {
                 <div className="pt-4 flex items-center justify-between">
                   <Link
                     href={`/books/${book.slug}`}
-                    className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-midnight text-bone text-xs uppercase tracking-widest font-semibold hover:bg-vermilion transition-colors"
+                    className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors shadow-md"
                   >
                     <span>Read Synopsis & Excerpts</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -103,13 +103,13 @@ export default function BooksPage() {
           <h3 className="font-serif text-3xl font-bold text-midnight">
             Bulk Orders for Event Attendees
           </h3>
-          <p className="text-sm text-midnight/70 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base text-midnight/80 max-w-xl mx-auto leading-relaxed font-sans">
             Many corporate clients gift copies of "Finding Your Better Self" to convention delegates and leadership cohorts in conjunction with Peter’s keynotes.
           </p>
           <div className="pt-2">
             <Link
               href="/contact?type=books"
-              className="px-8 py-3.5 rounded-full bg-midnight text-bone text-xs uppercase tracking-widest font-semibold hover:bg-vermilion transition-colors inline-block"
+              className="px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors shadow-lg inline-block"
             >
               Inquire About Bulk Copies
             </Link>

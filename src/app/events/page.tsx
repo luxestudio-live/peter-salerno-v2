@@ -41,11 +41,11 @@ export default function EventsPage() {
           >
             <div className="space-y-3 max-w-xl">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="px-3 py-1 rounded-full bg-midnight text-bone text-[10px] font-mono uppercase tracking-wider font-bold">
+                <span className="px-3.5 py-1.5 rounded-full bg-vermilion text-white text-xs font-mono uppercase tracking-wider font-bold shadow-xs">
                   {event.type}
                 </span>
                 <span
-                  className={`px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider font-bold ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider font-bold ${
                     event.status === 'Open'
                       ? 'bg-vermilion/15 text-vermilion'
                       : event.status === 'Limited Seats'
@@ -82,13 +82,13 @@ export default function EventsPage() {
               {event.status === 'Open' || event.status === 'Limited Seats' ? (
                 <Link
                   href="/contact?type=speaking"
-                  className="px-6 py-3 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-midnight transition-colors inline-flex items-center space-x-1.5 shadow-md"
+                  className="px-7 py-3.5 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors inline-flex items-center space-x-1.5 shadow-md"
                 >
                   <Ticket className="w-4 h-4" />
                   <span>Delegate Registration</span>
                 </Link>
               ) : (
-                <span className="px-4 py-2 rounded-full border border-midnight/15 text-grey text-xs font-mono">
+                <span className="px-4 py-2 rounded-full border-2 border-midnight/15 text-midnight/70 text-xs font-mono font-bold">
                   Private Corporate Event
                 </span>
               )}
@@ -99,20 +99,20 @@ export default function EventsPage() {
 
       {/* Host Peter at your event */}
       <section className="px-6 md:px-12 max-w-5xl mx-auto pt-12 text-center space-y-6">
-        <div className="p-10 rounded-2xl bg-midnight text-bone space-y-4 shadow-xl">
-          <span className="text-xs uppercase font-mono tracking-widest text-gold block">
+        <div className="p-10 sm:p-14 rounded-3xl bg-[#EBE4D5] border-2 border-midnight/15 text-midnight space-y-4 shadow-xl">
+          <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block">
             Booking For 2026/2027
           </span>
-          <h3 className="font-serif text-3xl sm:text-4xl font-bold">
+          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-midnight">
             Looking to add your conference to Peter’s calendar?
           </h3>
-          <p className="text-sm text-bone/70 max-w-lg mx-auto">
+          <p className="text-base sm:text-lg text-midnight/80 max-w-lg mx-auto font-sans leading-relaxed">
             Peter travels extensively for keynote presentations, masterclasses, and executive offsites.
           </p>
           <div className="pt-2">
             <Link
               href="/contact"
-              className="px-8 py-3.5 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-gold transition-colors inline-flex items-center space-x-2"
+              className="px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors inline-flex items-center space-x-2 shadow-lg"
             >
               <span>Hold a Date on the Calendar</span>
               <ArrowUpRight className="w-4 h-4" />

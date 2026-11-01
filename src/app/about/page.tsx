@@ -141,11 +141,11 @@ export default function AboutPage() {
                 <div className="font-serif text-4xl sm:text-5xl font-light text-midnight/25 select-none tracking-tight">
                   {chapter.num.replace('Chapter ', '')}
                 </div>
-                <p className="text-xs font-mono text-grey uppercase tracking-wider leading-relaxed">
+                <p className="text-xs sm:text-sm font-mono text-grey uppercase tracking-wider leading-relaxed font-semibold">
                   {chapter.era}
                 </p>
-                <div className="inline-flex p-3 rounded-xl bg-sand/60 text-midnight">
-                  <Icon className="w-5 h-5" />
+                <div className="inline-flex p-3 rounded-xl bg-sand/60 text-vermilion shadow-xs">
+                  <Icon className="w-6 h-6" />
                 </div>
               </div>
 
@@ -159,17 +159,17 @@ export default function AboutPage() {
                   {chapter.lead}
                 </p>
 
-                <div className="space-y-4 text-sm sm:text-base text-midnight/75 font-sans leading-relaxed">
+                <div className="space-y-4 text-base sm:text-lg text-midnight/80 font-sans leading-relaxed">
                   {chapter.paragraphs.map((p, i) => (
                     <p key={i}>{p}</p>
                   ))}
                 </div>
 
-                <div className="p-6 rounded-2xl bg-sand/40 space-y-2 border border-sand">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-gold block">
+                <div className="p-6 rounded-2xl bg-sand/40 space-y-2 border-2 border-sand">
+                  <span className="text-xs font-mono uppercase tracking-widest text-vermilion font-bold block">
                     Chapter Axiom
                   </span>
-                  <blockquote className="text-base sm:text-lg italic font-serif text-midnight/90 leading-snug">
+                  <blockquote className="text-lg sm:text-xl italic font-serif text-midnight leading-snug font-medium">
                     "{chapter.quote}"
                   </blockquote>
                 </div>
@@ -180,21 +180,21 @@ export default function AboutPage() {
       </section>
 
       {/* Next Steps CTA */}
-      <section className="px-6 md:px-12 max-w-5xl mx-auto pt-12 border-t border-midnight/10 text-center space-y-6">
-        <h3 className="font-serif text-3xl font-bold text-midnight">
+      <section className="px-6 md:px-12 max-w-5xl mx-auto pt-12 border-t-2 border-midnight/10 text-center space-y-6">
+        <h3 className="font-serif text-3xl sm:text-4xl font-bold text-midnight">
           Discover How Peter Brings These Chapters to Life
         </h3>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/speaking"
-            className="px-8 py-3.5 rounded-full bg-midnight text-bone text-xs uppercase tracking-widest font-semibold hover:bg-vermilion transition-colors inline-flex items-center space-x-2"
+            className="px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors inline-flex items-center space-x-2 shadow-lg"
           >
             <span>Explore Keynotes On Stage</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
           <Link
             href="/work-with-peter"
-            className="px-8 py-3.5 rounded-full border border-midnight/25 text-midnight text-xs uppercase tracking-widest font-semibold hover:bg-sand transition-colors"
+            className="px-8 py-4 rounded-full border-2 border-midnight/25 text-midnight text-sm uppercase tracking-widest font-bold hover:bg-sand transition-colors"
           >
             <span>Executive Mentoring</span>
           </Link>

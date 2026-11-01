@@ -85,18 +85,18 @@ export function CustomCursor() {
       <div
         ref={cursorRingRef}
         aria-hidden="true"
-        className={`pointer-events-none fixed top-0 left-0 z-50 flex items-center justify-center rounded-full border transition-all duration-200 ease-out ${
+        className={`pointer-events-none fixed top-0 left-0 z-50 flex items-center justify-center rounded-full border-2 transition-all duration-200 ease-out ${
           cursorVariant === 'listen'
-            ? 'h-16 w-16 -ml-8 -mt-8 border-gold bg-midnight/80 text-bone backdrop-blur-sm'
+            ? 'h-16 w-16 -ml-8 -mt-8 border-vermilion bg-white/95 text-midnight shadow-lg backdrop-blur-sm'
             : cursorVariant === 'view'
-            ? 'h-20 w-20 -ml-10 -mt-10 border-bone/60 bg-vermilion/90 text-white shadow-xl'
+            ? 'h-20 w-20 -ml-10 -mt-10 border-white bg-vermilion/95 text-white shadow-xl'
             : cursorVariant === 'explore'
-            ? 'h-16 w-16 -ml-8 -mt-8 border-vermilion bg-bone text-midnight font-bold'
+            ? 'h-16 w-16 -ml-8 -mt-8 border-vermilion bg-white text-midnight font-bold shadow-lg'
             : 'h-8 w-8 -ml-4 -mt-4 border-foreground/30 bg-foreground/5'
         }`}
       >
         {cursorText && (
-          <span className="text-[10px] uppercase tracking-widest font-sans font-medium px-1 select-none">
+          <span className="text-xs uppercase tracking-widest font-sans font-bold px-1 select-none">
             {cursorText}
           </span>
         )}

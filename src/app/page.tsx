@@ -115,14 +115,14 @@ export default function HomePage() {
                 href="/speaking"
                 data-cursor="explore"
                 data-cursor-text="Stage"
-                className="inline-flex items-center space-x-2 px-8 py-4 rounded-full bg-midnight text-bone text-xs uppercase tracking-widest font-semibold hover:bg-vermilion transition-all duration-300 shadow-xl"
+                className="inline-flex items-center space-x-2 px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-all duration-300 shadow-xl"
               >
                 <span>Explore Keynotes</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center space-x-2 px-8 py-4 rounded-full border border-midnight/25 text-midnight text-xs uppercase tracking-widest font-semibold hover:bg-sand transition-colors"
+                className="inline-flex items-center space-x-2 px-8 py-4 rounded-full border-2 border-midnight/25 text-midnight text-sm uppercase tracking-widest font-bold hover:bg-sand transition-colors"
               >
                 <span>Read the Biography</span>
               </Link>
@@ -132,15 +132,15 @@ export default function HomePage() {
             <div className="pt-8 border-t border-midnight/10 grid grid-cols-3 gap-4 max-w-md">
               <div>
                 <span className="font-serif text-2xl font-bold text-midnight block">MDRT</span>
-                <span className="text-[11px] font-sans text-grey uppercase tracking-wider">Top Table Record</span>
+                <span className="text-xs font-sans text-grey font-semibold uppercase tracking-wider">Top Table Record</span>
               </div>
               <div>
                 <span className="font-serif text-2xl font-bold text-midnight block">Laughter</span>
-                <span className="text-[11px] font-sans text-grey uppercase tracking-wider">Club Leadership</span>
+                <span className="text-xs font-sans text-grey font-semibold uppercase tracking-wider">Club Leadership</span>
               </div>
               <div>
                 <span className="font-serif text-2xl font-bold text-midnight block">Radio</span>
-                <span className="text-[11px] font-sans text-grey uppercase tracking-wider">Host & Executive</span>
+                <span className="text-xs font-sans text-grey font-semibold uppercase tracking-wider">Host & Executive</span>
               </div>
             </div>
           </div>
@@ -156,12 +156,12 @@ export default function HomePage() {
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
               />
-              {/* Subtle gradient vignette overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-80" />
+              {/* Subtle gentle vignette overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-midnight/30 via-transparent to-transparent opacity-40 pointer-events-none" />
 
               {/* Inlaid Tagline Card */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-bone/90 backdrop-blur-md border border-bone/40 shadow-lg">
-                <span className="text-[10px] uppercase font-mono tracking-widest text-vermilion font-bold block mb-1">
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-bone/95 backdrop-blur-md border border-bone/60 shadow-lg">
+                <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block mb-1">
                   Brand Tagline
                 </span>
                 <p className="font-serif text-lg sm:text-xl font-bold text-midnight leading-snug">
@@ -199,54 +199,46 @@ export default function HomePage() {
                 <div
                   key={persona.title}
                   onClick={() => setActivePersona(index)}
-                  className={`p-8 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
+                  className={`p-8 rounded-2xl border-2 transition-all duration-300 cursor-pointer flex flex-col justify-between ${
                     isSelected
-                      ? 'bg-midnight text-bone border-midnight shadow-2xl scale-[1.02]'
-                      : 'bg-bone text-midnight border-midnight/10 hover:border-gold hover:shadow-lg'
+                      ? 'bg-white text-midnight border-vermilion shadow-2xl ring-4 ring-vermilion/15 scale-[1.02]'
+                      : 'bg-white/80 hover:bg-white text-midnight border-midnight/10 hover:border-gold hover:shadow-lg'
                   }`}
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full ${
-                        isSelected ? 'bg-gold/20 text-gold' : 'bg-sand text-grey'
+                      <span className={`text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full font-bold ${
+                        isSelected ? 'bg-vermilion/15 text-vermilion' : 'bg-sand text-grey font-semibold'
                       }`}>
                         {persona.tag}
                       </span>
                       <Icon className={`w-5 h-5 ${isSelected ? 'text-vermilion' : 'text-grey'}`} />
                     </div>
 
-                    <h3 className={`font-serif text-2xl sm:text-3xl font-bold tracking-tight ${
-                      isSelected ? 'text-bone' : 'text-midnight'
-                    }`}>
+                    <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-midnight">
                       {persona.title}
                     </h3>
-                    <p className={`text-xs uppercase tracking-wider font-sans font-semibold ${
-                      isSelected ? 'text-gold' : 'text-vermilion'
-                    }`}>
+                    <p className="text-sm uppercase tracking-wider font-sans font-bold text-vermilion">
                       {persona.subtitle}
                     </p>
-                    <p className={`text-sm leading-relaxed ${
-                      isSelected ? 'text-bone/80' : 'text-midnight/70'
-                    }`}>
+                    <p className="text-base leading-relaxed text-midnight/80 font-sans">
                       {persona.description}
                     </p>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-current/10 flex items-center justify-between">
+                  <div className="pt-6 mt-6 border-t border-midnight/10 flex items-center justify-between">
                     <div>
-                      <span className="font-serif text-2xl font-bold block">{persona.stat}</span>
-                      <span className="text-[10px] font-mono uppercase tracking-wider opacity-60">
+                      <span className="font-serif text-2xl sm:text-3xl font-bold block text-midnight">{persona.stat}</span>
+                      <span className="text-xs font-mono uppercase tracking-wider text-grey font-semibold">
                         {persona.statLabel}
                       </span>
                     </div>
                     <Link
                       href={persona.href}
-                      className={`text-xs uppercase tracking-widest font-semibold inline-flex items-center space-x-1 ${
-                        isSelected ? 'text-gold hover:text-white' : 'text-vermilion hover:text-midnight'
-                      }`}
+                      className="text-sm uppercase tracking-widest font-bold inline-flex items-center space-x-1 text-vermilion hover:text-midnight transition-colors"
                     >
                       <span>Explore</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
+                      <ArrowUpRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>
@@ -274,10 +266,10 @@ export default function HomePage() {
       </section>
 
       {/* ================= SCENE 4: THE STAGE (SPEAKING INTRO) ================= */}
-      <section className="relative py-28 px-6 md:px-12 bg-midnight text-bone overflow-hidden border-b border-bone/10">
+      <section className="relative py-28 px-6 md:px-12 bg-[#EFE9DF] text-midnight overflow-hidden border-b-2 border-midnight/15">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Stage Imagery */}
-          <div className="lg:col-span-6 relative aspect-16/10 rounded-2xl overflow-hidden shadow-2xl border border-bone/20 group">
+          <div className="lg:col-span-6 relative aspect-16/10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
             <Image
               src="/images/peter-salerno-stage.jpg"
               alt="Peter Salerno presenting on stage in front of auditorium"
@@ -285,10 +277,10 @@ export default function HomePage() {
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-midnight/90 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs font-mono text-gold">
-              <span>Auditorium Keynote • Sydney</span>
-              <span className="px-2.5 py-1 rounded-full bg-vermilion text-bone font-sans uppercase font-bold text-[10px]">
+            <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs font-mono text-white">
+              <span className="font-semibold text-sm">Auditorium Keynote • Sydney</span>
+              <span className="px-3 py-1 rounded-full bg-vermilion text-white font-sans uppercase font-bold text-xs shadow-md">
                 Live Stage
               </span>
             </div>
@@ -296,14 +288,14 @@ export default function HomePage() {
 
           {/* Right Stagecraft Copy */}
           <div className="lg:col-span-6 space-y-6">
-            <span className="text-xs uppercase font-mono tracking-widest text-gold block">
+            <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block">
               04. The Power of the Stage
             </span>
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-bone leading-[1.05]">
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-midnight leading-[1.05]">
               Some messages <br />
-              <span className="text-sand/80 italic font-normal">stay with you</span> for life.
+              <span className="italic font-normal text-midnight/80">stay with you</span> for life.
             </h2>
-            <p className="text-sm sm:text-base text-bone/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-midnight/80 leading-relaxed font-sans">
               When Peter walks onto a platform, there is no generic PowerPoint sleepwalk. Combining decades of consultative business leadership with theatrical illusion and biological laughter therapy, he awakens audiences to their own creative power.
             </p>
 
@@ -313,15 +305,15 @@ export default function HomePage() {
                 <Link
                   key={topic.slug}
                   href={`/speaking/${topic.slug}`}
-                  className="flex items-center justify-between p-3.5 rounded-lg bg-charcoal/60 hover:bg-charcoal border border-bone/10 hover:border-gold transition-all group"
+                  className="flex items-center justify-between p-4 rounded-xl bg-white hover:bg-[#FAF6EE] border-2 border-midnight/15 hover:border-vermilion transition-all shadow-sm group"
                 >
                   <div className="flex items-center space-x-3">
-                    <span className="font-mono text-xs text-gold font-bold">{topic.number}</span>
-                    <span className="font-serif text-lg font-medium text-bone group-hover:text-vermilion transition-colors">
+                    <span className="font-mono text-sm text-vermilion font-bold">{topic.number}</span>
+                    <span className="font-serif text-lg sm:text-xl font-bold text-midnight group-hover:text-vermilion transition-colors">
                       {topic.title}
                     </span>
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-grey group-hover:text-vermilion transition-colors" />
+                  <ArrowUpRight className="w-5 h-5 text-midnight/50 group-hover:text-vermilion group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </Link>
               ))}
             </div>
@@ -329,7 +321,7 @@ export default function HomePage() {
             <div className="pt-4">
               <Link
                 href="/speaking"
-                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-gold transition-colors"
+                className="inline-flex items-center space-x-2 px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors shadow-lg"
               >
                 <span>View All 9 Keynote Subjects</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -340,25 +332,25 @@ export default function HomePage() {
       </section>
 
       {/* ================= SCENE 5: THE AIRWAVES (HAPPY BUSINESS RADIO) ================= */}
-      <section className="py-24 px-6 md:px-12 bg-charcoal text-bone border-b border-bone/10">
+      <section className="py-24 px-6 md:px-12 bg-sand/30 text-midnight border-b-2 border-midnight/10">
         <div className="max-w-7xl mx-auto space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-bone/15 pb-6 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between border-b-2 border-midnight/10 pb-6 gap-4">
             <div>
-              <span className="text-xs uppercase font-mono tracking-widest text-gold block mb-2">
+              <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block mb-2">
                 05. Broadcast Dialogue
               </span>
-              <h2 className="font-serif text-4xl sm:text-5xl font-bold text-bone">
+              <h2 className="font-serif text-4xl sm:text-5xl font-bold text-midnight">
                 Happy Business Radio
               </h2>
             </div>
-            <p className="text-sm font-sans text-grey max-w-md">
+            <p className="text-base font-sans text-grey font-medium max-w-md">
               A weekly audio haven where corporate seriousness gives way to genuine curiosity, levity, and transformative business conversations.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Studio Photo Card */}
-            <div className="lg:col-span-5 relative aspect-16/10 rounded-2xl overflow-hidden shadow-2xl border border-bone/15 group">
+            <div className="lg:col-span-5 relative aspect-16/10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
               <Image
                 src="/images/peter-salerno-radio.jpg"
                 alt="Peter Salerno in Happy Business Radio broadcast studio"
@@ -366,31 +358,31 @@ export default function HomePage() {
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-midnight/50 via-transparent to-transparent pointer-events-none" />
               <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 rounded-full bg-vermilion text-bone text-[10px] font-mono uppercase tracking-wider font-bold">
+                <span className="px-3.5 py-1.5 rounded-full bg-vermilion text-white text-xs font-mono uppercase tracking-wider font-bold shadow-md">
                   On The Air
                 </span>
               </div>
             </div>
 
             {/* Featured Episode Player Card */}
-            <div className="lg:col-span-7 bg-midnight border border-gold/30 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl">
-              <div className="flex items-center justify-between border-b border-bone/10 pb-4">
-                <span className="text-xs font-mono text-gold uppercase tracking-wider">
+            <div className="lg:col-span-7 bg-white border-2 border-midnight/15 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
+              <div className="flex items-center justify-between border-b border-midnight/10 pb-4">
+                <span className="text-sm font-mono text-vermilion uppercase tracking-wider font-bold">
                   Featured Episode • #{featuredEpisode.episodeNumber}
                 </span>
-                <span className="text-xs font-mono text-grey">{featuredEpisode.duration}</span>
+                <span className="text-sm font-mono text-midnight/70 font-semibold">{featuredEpisode.duration}</span>
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-bone leading-snug">
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-midnight leading-snug">
                   {featuredEpisode.title}
                 </h3>
-                <p className="text-xs text-gold/90 font-sans mt-1">
+                <p className="text-sm text-vermilion font-semibold font-sans mt-1">
                   Guest: {featuredEpisode.guest} — {featuredEpisode.guestRole}
                 </p>
-                <p className="text-sm text-grey leading-relaxed mt-3">
+                <p className="text-base text-midnight/80 font-sans leading-relaxed mt-3">
                   {featuredEpisode.description}
                 </p>
               </div>
@@ -399,7 +391,7 @@ export default function HomePage() {
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   onClick={() => playEpisode(featuredEpisode)}
-                  className="px-6 py-3 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-gold transition-colors flex items-center space-x-2 shadow-lg"
+                  className="px-7 py-3.5 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors flex items-center space-x-2 shadow-lg"
                   suppressHydrationWarning
                 >
                   {isPlaying && currentEpisode?.slug === featuredEpisode.slug ? (
@@ -416,7 +408,7 @@ export default function HomePage() {
                 </button>
                 <Link
                   href="/podcast"
-                  className="text-xs uppercase tracking-widest font-sans text-bone/70 hover:text-bone underline"
+                  className="text-sm uppercase tracking-widest font-sans font-bold text-midnight hover:text-vermilion underline decoration-vermilion decoration-2 underline-offset-4"
                 >
                   Browse Full Podcast Archive →
                 </Link>
@@ -430,28 +422,28 @@ export default function HomePage() {
       <section className="py-24 px-6 md:px-12 bg-bone border-b border-midnight/10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 space-y-6">
-            <span className="text-xs uppercase font-mono tracking-widest text-vermilion block">
+            <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block">
               06. The Written Word
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-midnight leading-[1.05]">
               Stories, ideas, and <br />
               <span className="italic font-normal text-midnight/80">everything</span> in between.
             </h2>
-            <p className="text-sm text-midnight/70 leading-relaxed">
+            <p className="text-base text-midnight/80 leading-relaxed font-sans">
               Peter’s books are written for people seeking clarity without corporate jargon. Drawing from decades of stagecraft and human dialogue, these pages explore the quiet architecture of personal alignment.
             </p>
-            <div className="p-4 rounded-xl bg-sand/40 border border-midnight/10 space-y-2">
-              <span className="text-[10px] uppercase font-mono tracking-widest text-grey block">
+            <div className="p-5 rounded-xl bg-sand/40 border border-midnight/15 space-y-2">
+              <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block">
                 Selected Excerpt
               </span>
-              <p className="font-serif text-base italic text-midnight leading-snug">
+              <p className="font-serif text-lg italic text-midnight leading-snug">
                 "{featuredBook.excerpt.slice(0, 160)}..."
               </p>
             </div>
             <div>
               <Link
                 href="/books"
-                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-midnight text-bone text-xs uppercase tracking-widest font-semibold hover:bg-vermilion transition-colors"
+                className="inline-flex items-center space-x-2 px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors shadow-lg"
               >
                 <span>Enter The Library</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -469,13 +461,13 @@ export default function HomePage() {
       <section className="py-24 px-6 md:px-12 bg-sand/30 border-b border-midnight/10">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-semibold block">
+            <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block">
               07. The Framework
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl font-bold text-midnight">
               Finding Your Better Self
             </h2>
-            <p className="text-sm text-grey">
+            <p className="text-base text-grey font-medium">
               The four foundational pillars Peter shares with executives and audiences across the world.
             </p>
           </div>
@@ -503,10 +495,10 @@ export default function HomePage() {
                 desc: 'Shift from self-conscious performance anxiety into high-craft service to your team and clients.'
               }
             ].map((pillar) => (
-              <div key={pillar.step} className="p-6 rounded-xl bg-bone border border-midnight/10 shadow-xs space-y-3">
-                <span className="font-mono text-xs font-bold text-vermilion block">{pillar.step}</span>
-                <h3 className="font-serif text-xl font-bold text-midnight">{pillar.title}</h3>
-                <p className="text-xs text-midnight/70 leading-relaxed">{pillar.desc}</p>
+              <div key={pillar.step} className="p-6 rounded-xl bg-white border-2 border-midnight/10 shadow-sm space-y-3">
+                <span className="font-mono text-sm font-bold text-vermilion block">{pillar.step}</span>
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-midnight">{pillar.title}</h3>
+                <p className="text-sm sm:text-base text-midnight/80 leading-relaxed font-sans">{pillar.desc}</p>
               </div>
             ))}
           </div>
@@ -516,26 +508,26 @@ export default function HomePage() {
       {/* ================= SCENE 8: CLOSING INVITATION ================= */}
       <section className="py-24 px-6 md:px-12 bg-bone text-center">
         <div className="max-w-4xl mx-auto space-y-8">
-          <span className="text-xs uppercase font-mono tracking-widest text-grey block">
+          <span className="text-sm uppercase font-mono tracking-widest text-vermilion font-bold block">
             08. The Next Chapter
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-midnight leading-tight">
             Ready to bring the magic message to your stage or team?
           </h2>
-          <p className="text-base text-midnight/70 max-w-xl mx-auto leading-relaxed">
+          <p className="text-lg text-midnight/80 max-w-xl mx-auto leading-relaxed font-sans">
             Whether planning an annual convention, executive retreat, or masterclass series, let’s design an experience your audience will never forget.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Link
               href="/contact"
-              className="px-8 py-4 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-midnight transition-colors shadow-xl inline-flex items-center space-x-2"
+              className="px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors shadow-xl inline-flex items-center space-x-2"
             >
               <span>Initiate An Engagement</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
             <Link
               href="/speaking"
-              className="px-8 py-4 rounded-full border border-midnight/20 text-midnight text-xs uppercase tracking-widest font-semibold hover:bg-sand transition-colors"
+              className="px-8 py-4 rounded-full border-2 border-midnight/20 text-midnight text-sm uppercase tracking-widest font-bold hover:bg-sand transition-colors"
             >
               <span>Review Keynote Details</span>
             </Link>

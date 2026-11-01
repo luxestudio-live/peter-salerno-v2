@@ -63,13 +63,14 @@ export default function MediaPage() {
               </span>
               <button
                 onClick={() => copyToClipboard(PRESS_KIT.shortBio, 'short')}
-                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-midnight text-bone hover:bg-vermilion transition-colors text-xs font-sans uppercase tracking-wider"
+                className="flex items-center space-x-1.5 px-4 py-2 rounded-full bg-vermilion text-white hover:bg-midnight transition-colors text-xs font-sans font-bold uppercase tracking-wider shadow-xs cursor-pointer"
+                suppressHydrationWarning
               >
                 {copiedKey === 'short' ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copiedKey === 'short' ? 'Copied' : 'Copy'}</span>
               </button>
             </div>
-            <p className="text-sm font-sans text-midnight/80 leading-relaxed">
+            <p className="text-base font-sans text-midnight/85 leading-relaxed">
               {PRESS_KIT.shortBio}
             </p>
           </div>
@@ -82,13 +83,14 @@ export default function MediaPage() {
               </span>
               <button
                 onClick={() => copyToClipboard(PRESS_KIT.mediumBio, 'med')}
-                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-midnight text-bone hover:bg-vermilion transition-colors text-xs font-sans uppercase tracking-wider"
+                className="flex items-center space-x-1.5 px-4 py-2 rounded-full bg-vermilion text-white hover:bg-midnight transition-colors text-xs font-sans font-bold uppercase tracking-wider shadow-xs cursor-pointer"
+                suppressHydrationWarning
               >
                 {copiedKey === 'med' ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copiedKey === 'med' ? 'Copied' : 'Copy'}</span>
               </button>
             </div>
-            <p className="text-sm font-sans text-midnight/80 leading-relaxed">
+            <p className="text-base font-sans text-midnight/85 leading-relaxed">
               {PRESS_KIT.mediumBio}
             </p>
           </div>
@@ -101,13 +103,14 @@ export default function MediaPage() {
               </span>
               <button
                 onClick={() => copyToClipboard(PRESS_KIT.fullBio, 'full')}
-                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-midnight text-bone hover:bg-vermilion transition-colors text-xs font-sans uppercase tracking-wider"
+                className="flex items-center space-x-1.5 px-4 py-2 rounded-full bg-vermilion text-white hover:bg-midnight transition-colors text-xs font-sans font-bold uppercase tracking-wider shadow-sm cursor-pointer"
+                suppressHydrationWarning
               >
                 {copiedKey === 'full' ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedKey === 'full' ? 'Copied' : 'Copy'}</span>
+                <span>{copiedKey === 'full' ? 'Copied' : 'Copy Bio'}</span>
               </button>
             </div>
-            <div className="text-sm font-sans text-midnight/80 leading-relaxed space-y-3 whitespace-pre-line">
+            <div className="text-base font-sans text-midnight/85 leading-relaxed space-y-3 whitespace-pre-line">
               {PRESS_KIT.fullBio}
             </div>
           </div>
@@ -115,7 +118,7 @@ export default function MediaPage() {
       </section>
 
       {/* High-Resolution Media Assets */}
-      <section className="px-6 md:px-12 max-w-7xl mx-auto py-16 border-t border-midnight/10">
+      <section className="px-6 md:px-12 max-w-7xl mx-auto py-16 border-t-2 border-midnight/10">
         <div className="space-y-8">
           <div>
             <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block mb-2">
@@ -147,7 +150,7 @@ export default function MediaPage() {
                 desc: 'Happy Business Radio microphone'
               }
             ].map((img) => (
-              <div key={img.title} className="p-4 rounded-2xl bg-sand/30 border border-midnight/10 space-y-3">
+              <div key={img.title} className="p-4 rounded-2xl bg-sand/30 border-2 border-midnight/10 space-y-3 shadow-xs">
                 <div className={`relative ${img.aspect} rounded-xl overflow-hidden shadow-md`}>
                   <Image
                     src={img.src}
@@ -160,12 +163,12 @@ export default function MediaPage() {
                 <div className="flex items-center justify-between pt-1">
                   <div>
                     <h4 className="font-serif text-lg font-bold text-midnight">{img.title}</h4>
-                    <p className="text-[11px] text-grey">{img.desc}</p>
+                    <p className="text-xs text-midnight/70 font-medium">{img.desc}</p>
                   </div>
                   <a
                     href={img.src}
                     download
-                    className="p-2 rounded-full bg-midnight text-bone hover:bg-vermilion transition-colors"
+                    className="p-2.5 rounded-full bg-vermilion text-white hover:bg-midnight transition-colors shadow-sm"
                     title="Download Photo"
                   >
                     <Download className="w-4 h-4" />
@@ -178,7 +181,7 @@ export default function MediaPage() {
       </section>
 
       {/* Stage Technical Rider */}
-      <section className="px-6 md:px-12 max-w-5xl mx-auto py-16 border-t border-midnight/10 space-y-8">
+      <section className="px-6 md:px-12 max-w-5xl mx-auto py-16 border-t-2 border-midnight/10 space-y-8">
         <div>
           <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block mb-2">
             AV Production
@@ -188,11 +191,11 @@ export default function MediaPage() {
           </h2>
         </div>
 
-        <div className="p-8 rounded-3xl bg-midnight text-bone space-y-6 shadow-xl">
+        <div className="p-8 sm:p-12 rounded-3xl bg-[#EBE4D5] border-2 border-midnight/15 text-midnight space-y-6 shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
             <div className="space-y-4">
-              <h4 className="font-serif text-xl font-bold text-gold">Audio Requirements</h4>
-              <ul className="space-y-2 text-bone/80 text-xs sm:text-sm">
+              <h4 className="font-serif text-xl sm:text-2xl font-bold text-midnight">Audio Requirements</h4>
+              <ul className="space-y-2 text-midnight/85 text-sm sm:text-base font-sans">
                 <li>• 1 × Professional wireless Shure / Sennheiser omni lavalier or discreet headset mic.</li>
                 <li>• House audio feed with active foldback / stage monitors.</li>
                 <li>• 3.5mm or HDMI audio output from stage for multimedia playback.</li>
@@ -200,8 +203,8 @@ export default function MediaPage() {
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-serif text-xl font-bold text-gold">Stage & Staging</h4>
-              <ul className="space-y-2 text-bone/80 text-xs sm:text-sm">
+              <h4 className="font-serif text-xl sm:text-2xl font-bold text-midnight">Stage & Staging</h4>
+              <ul className="space-y-2 text-midnight/85 text-sm sm:text-base font-sans">
                 <li>• Unobstructed stage with freedom of physical movement (prefer no fixed lectern).</li>
                 <li>• 1 × Small cocktail table or high table for stage illusion props.</li>
                 <li>• Confidence monitor displaying countdown timer and current cue.</li>
@@ -209,9 +212,9 @@ export default function MediaPage() {
             </div>
           </div>
 
-          <div className="pt-4 border-t border-bone/10 flex items-center justify-between text-xs text-grey">
+          <div className="pt-4 border-t-2 border-midnight/10 flex flex-col sm:flex-row sm:items-center justify-between text-sm text-midnight/80 font-medium gap-2">
             <span>For customized AV consultations, contact Peter’s production team directly.</span>
-            <Link href="/contact?type=media" className="text-gold hover:text-white underline font-mono">
+            <Link href="/contact?type=media" className="text-vermilion hover:text-midnight underline font-mono font-bold">
               Inquire With Production →
             </Link>
           </div>

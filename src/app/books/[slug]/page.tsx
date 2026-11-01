@@ -69,7 +69,7 @@ export default async function BookDetailPage({
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <Link
                 href={`/contact?subject=Book+Order:+${encodeURIComponent(book.title)}`}
-                className="px-8 py-3.5 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-midnight transition-colors shadow-lg inline-flex items-center space-x-2"
+                className="px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors shadow-lg inline-flex items-center space-x-2"
               >
                 <span>Order Author Signed Copy</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -124,7 +124,7 @@ export default async function BookDetailPage({
                 </p>
                 <div>
                   <span className="font-sans text-xs font-bold text-midnight block">{t.author}</span>
-                  <span className="font-sans text-[11px] text-grey">{t.role}</span>
+                  <span className="font-sans text-xs text-midnight/70 font-medium">{t.role}</span>
                 </div>
               </div>
             ))}

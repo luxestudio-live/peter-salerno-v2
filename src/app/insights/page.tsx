@@ -61,7 +61,7 @@ export default function InsightsPage() {
             </p>
 
             <div className="p-5 rounded-xl bg-bone/90 border border-sand shadow-xs space-y-1">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-gold block">
+              <span className="text-xs font-mono uppercase tracking-widest text-vermilion font-bold block">
                 The Central Axiom
               </span>
               <blockquote className="text-base italic font-serif text-midnight/90 leading-snug">
@@ -72,22 +72,22 @@ export default function InsightsPage() {
             <div className="pt-2">
               <Link
                 href={`/insights/${featured.slug}`}
-                className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-midnight text-bone text-xs uppercase tracking-widest font-semibold hover:bg-vermilion transition-colors"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors shadow-md"
               >
                 <span>Read Full Essay</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
 
-          <div className="lg:col-span-4 p-8 rounded-2xl bg-midnight text-bone text-center space-y-4 shadow-xl">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-gold block">
+          <div className="lg:col-span-4 p-8 sm:p-10 rounded-2xl bg-[#EBE4D5] border-2 border-midnight/15 text-midnight text-center space-y-4 shadow-xl">
+            <span className="text-xs font-mono uppercase tracking-widest text-vermilion font-bold block">
               Editorial Highlight
             </span>
-            <p className="font-serif text-2xl font-bold italic leading-snug">
+            <p className="font-serif text-2xl sm:text-3xl font-bold italic leading-snug text-midnight">
               "Great leadership is refusing to tolerate the small wobbles that normalize mediocrity."
             </p>
-            <span className="text-xs text-grey block">— Peter Salerno</span>
+            <span className="text-sm text-midnight/80 font-bold block">— Peter Salerno</span>
           </div>
         </div>
       </section>

@@ -17,12 +17,13 @@ export function EpisodePlayer({ episode }: { episode: PodcastEpisode }) {
   };
 
   return (
-    <div className="p-8 rounded-2xl bg-charcoal border border-gold/30 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div className="p-8 rounded-2xl bg-white border-2 border-midnight/15 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
       <div className="flex items-center space-x-4">
         <button
           onClick={() => playEpisode(episode)}
-          className="p-5 rounded-full bg-vermilion text-bone hover:bg-gold transition-colors shadow-xl shrink-0 cursor-pointer"
+          className="p-5 rounded-full bg-vermilion text-white hover:bg-midnight transition-colors shadow-xl shrink-0 cursor-pointer"
           aria-label={isCurrentPlaying ? 'Pause Broadcast' : 'Play Broadcast'}
+          suppressHydrationWarning
         >
           {isCurrentPlaying ? (
             <Pause className="w-6 h-6 fill-current" />
@@ -31,10 +32,10 @@ export function EpisodePlayer({ episode }: { episode: PodcastEpisode }) {
           )}
         </button>
         <div>
-          <span className="text-[10px] font-mono uppercase tracking-widest text-gold block">
+          <span className="text-xs font-mono uppercase tracking-widest text-vermilion font-bold block mb-1">
             Official Audio Stream
           </span>
-          <p className="font-serif text-xl font-bold text-bone">
+          <p className="font-serif text-xl sm:text-2xl font-bold text-midnight">
             {isCurrentPlaying ? 'Now Playing on Air' : 'Click to Listen to Episode'}
           </p>
         </div>
@@ -42,9 +43,10 @@ export function EpisodePlayer({ episode }: { episode: PodcastEpisode }) {
 
       <button
         onClick={handleShare}
-        className="flex items-center space-x-2 text-xs uppercase tracking-widest font-mono text-grey hover:text-bone border border-bone/15 px-4 py-2.5 rounded-full cursor-pointer"
+        className="flex items-center space-x-2 text-sm uppercase tracking-widest font-mono font-bold text-midnight hover:text-vermilion border-2 border-midnight/20 hover:border-vermilion px-5 py-3 rounded-full cursor-pointer transition-colors shadow-xs"
+        suppressHydrationWarning
       >
-        <Share2 className="w-3.5 h-3.5" />
+        <Share2 className="w-4 h-4 text-vermilion" />
         <span>Share Episode</span>
       </button>
     </div>

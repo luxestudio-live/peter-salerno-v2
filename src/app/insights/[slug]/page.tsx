@@ -83,12 +83,12 @@ export default async function ArticleDetailPage({
         </div>
 
         {/* Author Sign-off */}
-        <div className="p-8 rounded-2xl bg-sand/30 border border-midnight/10 space-y-2 pt-6 mt-12">
-          <span className="text-[10px] font-mono uppercase tracking-widest text-vermilion font-bold block">
+        <div className="p-8 rounded-2xl bg-sand/30 border-2 border-midnight/10 space-y-2 pt-6 mt-12">
+          <span className="text-xs font-mono uppercase tracking-widest text-vermilion font-bold block">
             About the Author
           </span>
-          <h3 className="font-serif text-xl font-bold text-midnight">Peter Salerno</h3>
-          <p className="text-xs text-midnight/70 leading-relaxed font-sans">
+          <h3 className="font-serif text-2xl font-bold text-midnight">Peter Salerno</h3>
+          <p className="text-sm sm:text-base text-midnight/80 leading-relaxed font-sans">
             "The Man With The Magic Message" — motivational speaker, author, host of Happy Business Radio, and leadership coach. Addressing auditoriums across Australia, New Zealand, and internationally.
           </p>
         </div>
@@ -106,11 +106,11 @@ export default async function ArticleDetailPage({
               href={`/insights/${rel.slug}`}
               className="p-6 rounded-xl bg-sand/30 hover:bg-sand border border-midnight/10 transition-colors block space-y-2 group"
             >
-              <span className="text-[10px] font-mono text-vermilion uppercase font-bold">{rel.category}</span>
-              <h4 className="font-serif text-lg font-bold text-midnight group-hover:text-vermilion transition-colors">
+              <span className="text-xs font-mono text-vermilion uppercase font-bold">{rel.category}</span>
+              <h4 className="font-serif text-xl font-bold text-midnight group-hover:text-vermilion transition-colors">
                 {rel.title}
               </h4>
-              <p className="text-xs text-grey line-clamp-2">{rel.lead}</p>
+              <p className="text-sm text-midnight/70 line-clamp-2">{rel.lead}</p>
             </Link>
           ))}
         </div>

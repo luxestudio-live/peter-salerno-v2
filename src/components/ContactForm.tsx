@@ -69,10 +69,10 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8 bg-bone border border-midnight/10 p-8 sm:p-12 rounded-2xl shadow-xl" suppressHydrationWarning>
+    <form onSubmit={handleSubmit} className="space-y-8 bg-bone border-2 border-midnight/10 p-8 sm:p-12 rounded-2xl shadow-xl" suppressHydrationWarning>
       {/* 1. Select Enquiry Type (Editorial Segmented Selector) */}
       <div className="space-y-3">
-        <label className="text-xs uppercase tracking-widest font-mono text-grey block">
+        <label className="text-sm uppercase tracking-widest font-mono text-vermilion font-bold block">
           01. Nature of Your Conversation
         </label>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -88,11 +88,12 @@ export function ContactForm() {
               key={type.id}
               type="button"
               onClick={() => setEnquiryType(type.id as any)}
-              className={`py-3 px-3 rounded-lg text-xs font-sans uppercase tracking-wider font-medium text-center transition-all ${
+              className={`py-3 px-3 rounded-lg text-sm font-sans uppercase tracking-wider transition-all cursor-pointer ${
                 enquiryType === type.id
-                  ? 'bg-midnight text-bone shadow-md'
-                  : 'bg-sand/40 text-midnight/70 hover:bg-sand hover:text-midnight border border-midnight/5'
+                  ? 'bg-vermilion text-white shadow-md font-bold ring-2 ring-vermilion/20'
+                  : 'bg-sand/40 text-midnight/80 hover:bg-sand hover:text-midnight border border-midnight/10 font-semibold'
               }`}
+              suppressHydrationWarning
             >
               {type.label}
             </button>
@@ -102,53 +103,53 @@ export function ContactForm() {
 
       {/* 2. Contact Details */}
       <div className="space-y-3">
-        <label className="text-xs uppercase tracking-widest font-mono text-grey block">
+        <label className="text-sm uppercase tracking-widest font-mono text-vermilion font-bold block">
           02. Your Details
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="text-[11px] font-sans text-midnight/80 mb-1 block">Full Name *</label>
+            <label className="text-sm font-semibold text-midnight mb-1.5 block">Full Name *</label>
             <input
               type="text"
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="e.g. Eleanor Vance"
-              className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+              className="w-full px-4 py-3 rounded-md bg-white border-2 border-midnight/15 text-base text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
               suppressHydrationWarning
             />
           </div>
           <div>
-            <label className="text-[11px] font-sans text-midnight/80 mb-1 block">Business Email *</label>
+            <label className="text-sm font-semibold text-midnight mb-1.5 block">Business Email *</label>
             <input
               type="email"
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="e.g. eleanor@organization.com"
-              className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+              className="w-full px-4 py-3 rounded-md bg-white border-2 border-midnight/15 text-base text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
               suppressHydrationWarning
             />
           </div>
           <div>
-            <label className="text-[11px] font-sans text-midnight/80 mb-1 block">Organization or Event</label>
+            <label className="text-sm font-semibold text-midnight mb-1.5 block">Organization or Event</label>
             <input
               type="text"
               value={formData.organization}
               onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
               placeholder="e.g. Australasian Executive Council"
-              className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+              className="w-full px-4 py-3 rounded-md bg-white border-2 border-midnight/15 text-base text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
               suppressHydrationWarning
             />
           </div>
           <div>
-            <label className="text-[11px] font-sans text-midnight/80 mb-1 block">Your Role / Title</label>
+            <label className="text-sm font-semibold text-midnight mb-1.5 block">Your Role / Title</label>
             <input
               type="text"
               value={formData.role}
               onChange={(e) => setFormData({ ...formData, role: e.target.value })}
               placeholder="e.g. VP of People & Culture"
-              className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+              className="w-full px-4 py-3 rounded-md bg-white border-2 border-midnight/15 text-base text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
               suppressHydrationWarning
             />
           </div>
@@ -157,27 +158,27 @@ export function ContactForm() {
 
       {/* 3. Conditional Event Inputs (for speaking or workshop) */}
       {(enquiryType === 'speaking' || enquiryType === 'workshop') && (
-        <div className="space-y-3 pt-2 border-t border-midnight/10">
-          <label className="text-xs uppercase tracking-widest font-mono text-grey block">
+        <div className="space-y-3 pt-2 border-t-2 border-midnight/10">
+          <label className="text-sm uppercase tracking-widest font-mono text-vermilion font-bold block">
             03. Event Scope & Logistics
           </label>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="text-[11px] font-sans text-midnight/80 mb-1 block">Target Date</label>
+              <label className="text-sm font-semibold text-midnight mb-1.5 block">Target Date</label>
               <input
                 type="date"
                 value={formData.eventDate}
                 onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
-                className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight focus:outline-none focus:border-vermilion"
+                className="w-full px-4 py-3 rounded-md bg-white border-2 border-midnight/15 text-base text-midnight focus:outline-none focus:border-vermilion"
                 suppressHydrationWarning
               />
             </div>
             <div>
-              <label className="text-[11px] font-sans text-midnight/80 mb-1 block">Expected Attendance</label>
+              <label className="text-sm font-semibold text-midnight mb-1.5 block">Expected Attendance</label>
               <select
                 value={formData.estimatedAudience}
                 onChange={(e) => setFormData({ ...formData, estimatedAudience: e.target.value })}
-                className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight focus:outline-none focus:border-vermilion"
+                className="w-full px-4 py-3 rounded-md bg-white border-2 border-midnight/15 text-base text-midnight focus:outline-none focus:border-vermilion"
                 suppressHydrationWarning
               >
                 <option value="">Select range...</option>
@@ -188,24 +189,24 @@ export function ContactForm() {
               </select>
             </div>
             <div>
-              <label className="text-[11px] font-sans text-midnight/80 mb-1 block">City / Venue</label>
+              <label className="text-sm font-semibold text-midnight mb-1.5 block">City / Venue</label>
               <input
                 type="text"
                 value={formData.location}
                 onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                 placeholder="e.g. Sydney, Australia"
-                className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+                className="w-full px-4 py-3 rounded-md bg-white border-2 border-midnight/15 text-base text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
                 suppressHydrationWarning
               />
             </div>
           </div>
 
           <div>
-            <label className="text-[11px] font-sans text-midnight/80 mb-1 block">Preferred Keynote Subject</label>
+            <label className="text-sm font-semibold text-midnight mb-1.5 block">Preferred Keynote Subject</label>
             <select
               value={formData.selectedTopic}
               onChange={(e) => setFormData({ ...formData, selectedTopic: e.target.value })}
-              className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight focus:outline-none focus:border-vermilion"
+              className="w-full px-4 py-3 rounded-md bg-white border-2 border-midnight/15 text-base text-midnight focus:outline-none focus:border-vermilion"
               suppressHydrationWarning
             >
               {SPEAKING_TOPICS.map((topic) => (
@@ -219,8 +220,8 @@ export function ContactForm() {
       )}
 
       {/* 4. The Message */}
-      <div className="space-y-3 pt-2 border-t border-midnight/10">
-        <label className="text-xs uppercase tracking-widest font-mono text-grey block">
+      <div className="space-y-3 pt-2 border-t-2 border-midnight/10">
+        <label className="text-sm uppercase tracking-widest font-mono text-vermilion font-bold block">
           04. What Challenge Are You Navigating?
         </label>
         <textarea
@@ -229,7 +230,7 @@ export function ContactForm() {
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           placeholder="Describe your audience, team context, goals, or what outcome would make this engagement an extraordinary success..."
-          className="w-full px-4 py-3 rounded-md bg-sand/30 border border-midnight/15 text-sm text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
+          className="w-full px-4 py-3 rounded-md bg-white border-2 border-midnight/15 text-base text-midnight placeholder:text-grey/60 focus:outline-none focus:border-vermilion"
           suppressHydrationWarning
         />
       </div>
@@ -237,15 +238,15 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-4 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-midnight transition-colors duration-300 shadow-xl flex items-center justify-center space-x-2"
+        className="w-full py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors duration-300 shadow-xl flex items-center justify-center space-x-2 cursor-pointer"
         suppressHydrationWarning
       >
         <span>{isSubmitting ? 'Transmitting Enquiry...' : 'Transmit Enquiry to Peter’s Office'}</span>
         <ArrowRight className="w-4 h-4" />
       </button>
 
-      <p className="text-center text-[11px] text-grey">
-        Direct enquiries can also be dispatched directly to <a href="mailto:office@petersalerno.com.au" className="underline hover:text-midnight">office@petersalerno.com.au</a>.
+      <p className="text-center text-xs text-midnight/80 font-medium">
+        Direct enquiries can also be dispatched directly to <a href="mailto:office@petersalerno.com.au" className="underline font-bold text-midnight hover:text-vermilion">office@petersalerno.com.au</a>.
       </p>
     </form>
   );

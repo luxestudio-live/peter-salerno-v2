@@ -125,34 +125,34 @@ export default function WorkWithPeterPage() {
                 <h3 className="font-serif text-3xl font-bold text-midnight leading-snug">
                   {offering.title}
                 </h3>
-                <p className="text-sm text-midnight/75 leading-relaxed font-sans">
+                <p className="text-base text-midnight/80 leading-relaxed font-sans">
                   {offering.description}
                 </p>
 
                 <div className="pt-2 space-y-2">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-grey block">
+                  <span className="text-xs font-mono uppercase tracking-wider text-vermilion font-bold block">
                     Core Outcomes
                   </span>
                   {offering.outcomes.map((out, i) => (
-                    <div key={i} className="flex items-start space-x-2.5 text-xs sm:text-sm text-midnight/85">
-                      <CheckCircle2 className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
+                    <div key={i} className="flex items-start space-x-2.5 text-sm sm:text-base text-midnight/85">
+                      <CheckCircle2 className="w-5 h-5 text-vermilion shrink-0 mt-0.5" />
                       <span>{out}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-midnight/10 flex items-center justify-between text-xs">
+              <div className="pt-6 border-t border-midnight/10 flex items-center justify-between text-sm">
                 <div>
-                  <span className="text-grey block text-[10px] font-mono uppercase">Target Cohort</span>
-                  <span className="font-medium text-midnight">{offering.ideal}</span>
+                  <span className="text-grey block text-xs font-mono uppercase font-bold">Target Cohort</span>
+                  <span className="font-bold text-midnight">{offering.ideal}</span>
                 </div>
                 <Link
                   href={`/contact?service=${encodeURIComponent(offering.title)}`}
-                  className="px-5 py-2.5 rounded-full bg-midnight text-bone hover:bg-vermilion transition-colors inline-flex items-center space-x-1 uppercase tracking-widest text-[11px] font-semibold"
+                  className="px-6 py-2.5 rounded-full bg-vermilion text-white hover:bg-midnight transition-colors inline-flex items-center space-x-1 uppercase tracking-widest text-xs font-bold shadow-md"
                 >
                   <span>Inquire</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function WorkWithPeterPage() {
       </section>
 
       {/* The 4-Pillar Method */}
-      <section className="px-6 md:px-12 max-w-7xl mx-auto py-20 border-t border-midnight/10">
+      <section className="px-6 md:px-12 max-w-7xl mx-auto py-20 border-t-2 border-midnight/10">
         <div className="space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-4">
             <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block">
@@ -170,17 +170,17 @@ export default function WorkWithPeterPage() {
             <h2 className="font-serif text-4xl sm:text-5xl font-bold text-midnight">
               The 4-Pillar Approach
             </h2>
-            <p className="text-sm text-midnight/70">
+            <p className="text-base text-midnight/80 font-sans">
               A humane, psychologically grounded architecture designed to transform organizational culture.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {pillars.map((pillar) => (
-              <div key={pillar.num} className="p-8 rounded-2xl bg-sand/40 border border-midnight/10 space-y-3">
+              <div key={pillar.num} className="p-8 rounded-2xl bg-sand/40 border-2 border-midnight/10 space-y-3 shadow-xs">
                 <span className="font-mono text-xl font-bold text-vermilion block">{pillar.num}</span>
                 <h3 className="font-serif text-2xl font-bold text-midnight">{pillar.title}</h3>
-                <p className="text-xs sm:text-sm text-midnight/75 leading-relaxed font-sans">{pillar.desc}</p>
+                <p className="text-sm sm:text-base text-midnight/80 leading-relaxed font-sans">{pillar.desc}</p>
               </div>
             ))}
           </div>
@@ -189,20 +189,20 @@ export default function WorkWithPeterPage() {
 
       {/* Inquiry Trigger CTA */}
       <section className="px-6 md:px-12 max-w-5xl mx-auto pt-12 text-center space-y-6">
-        <div className="p-10 rounded-2xl bg-midnight text-bone space-y-4 shadow-xl">
-          <span className="text-xs uppercase font-mono tracking-widest text-gold block">
+        <div className="p-10 sm:p-14 rounded-3xl bg-[#EBE4D5] border-2 border-midnight/15 text-midnight space-y-4 shadow-xl">
+          <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block">
             Direct Dialogue
           </span>
-          <h3 className="font-serif text-3xl sm:text-4xl font-bold">
+          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-midnight">
             Start an exploratory conversation with Peter.
           </h3>
-          <p className="text-sm text-bone/70 max-w-lg mx-auto">
+          <p className="text-base sm:text-lg text-midnight/80 max-w-lg mx-auto font-sans leading-relaxed">
             Share your organization’s immediate context or leadership goals. All executive inquiries are treated with strict confidentiality.
           </p>
           <div className="pt-2">
             <Link
               href="/contact?type=coaching"
-              className="px-8 py-4 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-gold transition-colors inline-flex items-center space-x-2"
+              className="px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors inline-flex items-center space-x-2 shadow-lg"
             >
               <span>Request Advisory Conversation</span>
               <ArrowUpRight className="w-4 h-4" />

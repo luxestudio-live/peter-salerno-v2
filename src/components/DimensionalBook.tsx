@@ -34,10 +34,10 @@ export function DimensionalBook({ book }: { book: Book }) {
 
           {/* Top metadata */}
           <div className="relative z-10 flex justify-between items-start border-b border-bone/20 pb-4">
-            <span className="text-[10px] font-mono tracking-widest uppercase opacity-75">
+            <span className="text-xs font-mono tracking-widest uppercase font-semibold opacity-90">
               Publication • {book.year}
             </span>
-            <BookOpen className="w-4 h-4 opacity-75" />
+            <BookOpen className="w-4 h-4 opacity-90" />
           </div>
 
           {/* Title and Subtitle */}
@@ -46,7 +46,7 @@ export function DimensionalBook({ book }: { book: Book }) {
               {book.title}
             </h3>
             <div className="w-12 h-0.5 bg-bone/40 my-3" />
-            <p className="font-sans text-xs text-bone/80 leading-relaxed">
+            <p className="font-sans text-sm text-bone/90 leading-relaxed font-medium">
               {book.subtitle}
             </p>
           </div>
@@ -54,14 +54,14 @@ export function DimensionalBook({ book }: { book: Book }) {
           {/* Bottom Author line */}
           <div className="relative z-10 border-t border-bone/20 pt-4 flex justify-between items-end">
             <div>
-              <span className="text-[9px] uppercase tracking-widest font-sans opacity-70 block">
+              <span className="text-xs uppercase tracking-widest font-sans font-semibold opacity-85 block">
                 Author
               </span>
-              <span className="font-serif text-base font-bold text-bone tracking-wide">
+              <span className="font-serif text-lg font-bold text-bone tracking-wide">
                 PETER SALERNO
               </span>
             </div>
-            <span className="text-[10px] font-mono uppercase bg-bone/15 px-2 py-0.5 rounded-sm">
+            <span className="text-xs font-mono uppercase bg-bone/20 px-2.5 py-1 rounded-sm font-semibold">
               Hardcover
             </span>
           </div>
@@ -72,10 +72,10 @@ export function DimensionalBook({ book }: { book: Book }) {
       </div>
 
       <div className="mt-4 text-center">
-        <h4 className="font-serif text-xl font-bold text-midnight group-hover:text-vermilion transition-colors">
+        <h4 className="font-serif text-xl sm:text-2xl font-bold text-midnight group-hover:text-vermilion transition-colors">
           {book.title}
         </h4>
-        <span className="text-xs text-grey uppercase tracking-wider font-sans">
+        <span className="text-sm text-vermilion uppercase tracking-wider font-sans font-bold">
           Explore Chapter Excerpts →
         </span>
       </div>

@@ -63,14 +63,14 @@ export default function SpeakingPage() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 href="/contact"
-                className="px-8 py-3.5 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-midnight transition-colors shadow-lg inline-flex items-center space-x-2"
+                className="px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors shadow-lg inline-flex items-center space-x-2"
               >
                 <span>Check Date Availability</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
               <Link
                 href="#formats"
-                className="px-8 py-3.5 rounded-full border border-midnight/25 text-midnight text-xs uppercase tracking-widest font-semibold hover:bg-sand transition-colors"
+                className="px-8 py-4 rounded-full border-2 border-midnight/25 text-midnight text-sm uppercase tracking-widest font-bold hover:bg-sand transition-colors"
               >
                 <span>View Session Formats</span>
               </Link>
@@ -101,7 +101,7 @@ export default function SpeakingPage() {
               Speaking Subjects
             </h2>
           </div>
-          <p className="text-xs uppercase font-mono text-grey tracking-wider">
+          <p className="text-sm font-semibold uppercase font-mono text-vermilion tracking-wider">
             Click any subject to view comprehensive briefing & takeaways
           </p>
         </div>
@@ -114,16 +114,16 @@ export default function SpeakingPage() {
       </section>
 
       {/* Speaking Formats Section */}
-      <section id="formats" className="px-6 md:px-12 max-w-7xl mx-auto py-20 border-t border-midnight/10">
+      <section id="formats" className="px-6 md:px-12 max-w-7xl mx-auto py-20 border-t-2 border-midnight/10">
         <div className="space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-4">
-            <span className="text-xs uppercase font-mono tracking-widest text-grey block">
+            <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block">
               Engagement Architecture
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl font-bold text-midnight">
               Speaking Formats
             </h2>
-            <p className="text-sm text-midnight/70">
+            <p className="text-base text-midnight/80 font-sans">
               Every presentation is customized to your event theme, audience makeup, and overarching organizational objectives.
             </p>
           </div>
@@ -132,28 +132,28 @@ export default function SpeakingPage() {
             {formats.map((format) => (
               <div
                 key={format.title}
-                className="p-8 rounded-2xl bg-sand/40 border border-midnight/10 shadow-xs space-y-4 flex flex-col justify-between"
+                className="p-8 rounded-2xl bg-sand/40 border-2 border-midnight/10 shadow-xs space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono uppercase text-vermilion font-bold tracking-wider">
+                    <span className="text-sm font-mono uppercase text-vermilion font-bold tracking-wider">
                       {format.duration}
                     </span>
-                    <Clock className="w-4 h-4 text-grey" />
+                    <Clock className="w-5 h-5 text-vermilion" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-midnight">
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-midnight">
                     {format.title}
                   </h3>
-                  <p className="text-sm text-midnight/75 leading-relaxed">
+                  <p className="text-base text-midnight/80 leading-relaxed font-sans">
                     {format.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-midnight/10 text-xs font-sans">
-                  <span className="text-grey block mb-1 uppercase tracking-wider font-mono text-[10px]">
+                <div className="pt-4 border-t border-midnight/10 text-sm font-sans">
+                  <span className="text-vermilion block mb-1 uppercase tracking-wider font-mono text-xs font-bold">
                     Ideal For
                   </span>
-                  <span className="text-midnight font-medium">{format.ideal}</span>
+                  <span className="text-midnight font-bold">{format.ideal}</span>
                 </div>
               </div>
             ))}
@@ -163,20 +163,20 @@ export default function SpeakingPage() {
 
       {/* Booking Call to Action */}
       <section className="px-6 md:px-12 max-w-5xl mx-auto pt-16 text-center space-y-6">
-        <div className="p-10 rounded-2xl bg-midnight text-bone space-y-6">
-          <span className="text-xs uppercase font-mono tracking-widest text-gold block">
+        <div className="p-10 sm:p-14 rounded-3xl bg-[#EBE4D5] border-2 border-midnight/15 text-midnight space-y-6 shadow-xl">
+          <span className="text-xs uppercase font-mono tracking-widest text-vermilion font-bold block">
             Booking & Availability
           </span>
-          <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+          <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-midnight">
             Bring Peter Salerno to your next conference or summit.
           </h3>
-          <p className="text-sm text-bone/70 max-w-lg mx-auto">
+          <p className="text-base sm:text-lg text-midnight/80 max-w-xl mx-auto leading-relaxed font-sans">
             Peter accepts a limited number of keynote and masterclass engagements per quarter to ensure bespoke research and deep audience calibration.
           </p>
           <div className="pt-2">
             <Link
               href="/contact"
-              className="px-8 py-4 rounded-full bg-vermilion text-bone text-xs uppercase tracking-widest font-semibold hover:bg-gold transition-colors inline-flex items-center space-x-2"
+              className="px-8 py-4 rounded-full bg-vermilion text-white text-sm uppercase tracking-widest font-bold hover:bg-midnight transition-colors inline-flex items-center space-x-2 shadow-lg"
             >
               <span>Request Keynote Proposal</span>
               <ArrowUpRight className="w-4 h-4" />

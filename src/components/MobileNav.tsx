@@ -28,24 +28,25 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
   ];
 
   return (
-    <div className="fixed inset-0 z-50 bg-midnight text-bone flex flex-col justify-between overflow-y-auto px-6 py-8 md:px-12 md:py-12 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 bg-[#FAF8F3] text-midnight flex flex-col justify-between overflow-y-auto px-6 py-8 md:px-12 md:py-12 animate-in fade-in duration-200">
       {/* Top Header inside Overlay */}
-      <div className="flex items-center justify-between border-b border-bone/10 pb-6">
+      <div className="flex items-center justify-between border-b-2 border-midnight/10 pb-6">
         <div>
-          <span className="font-serif text-2xl font-bold tracking-tight text-bone">PETER SALERNO</span>
-          <p className="text-[10px] tracking-widest uppercase font-sans text-grey">Navigation Index</p>
+          <span className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-midnight">PETER SALERNO</span>
+          <p className="text-xs tracking-widest uppercase font-sans text-grey font-semibold">Navigation Index</p>
         </div>
         <button
           onClick={onClose}
           aria-label="Close menu"
-          className="p-3 rounded-full border border-bone/20 text-bone hover:border-vermilion hover:text-vermilion transition-colors"
+          className="p-3 rounded-full border-2 border-midnight/20 text-midnight hover:border-vermilion hover:text-vermilion transition-colors cursor-pointer"
+          suppressHydrationWarning
         >
           <X className="w-6 h-6" />
         </button>
       </div>
 
       {/* Chapter Navigation List */}
-      <nav className="my-8 flex flex-col divide-y divide-bone/10">
+      <nav className="my-8 flex flex-col divide-y divide-midnight/10">
         {links.map((link) => {
           const isActive = pathname === link.href;
           return (
@@ -56,36 +57,36 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               className="py-4 group flex items-baseline justify-between transition-colors hover:pl-2"
             >
               <div className="flex items-baseline space-x-4">
-                <span className="font-mono text-xs text-gold/80 group-hover:text-vermilion transition-colors">
+                <span className="font-mono text-sm text-vermilion font-bold">
                   {link.num}
                 </span>
                 <div>
-                  <h3 className={`font-serif text-2xl sm:text-3xl font-medium tracking-tight transition-colors ${
-                    isActive ? 'text-vermilion font-bold' : 'text-bone group-hover:text-sand'
+                  <h3 className={`font-serif text-2xl sm:text-3xl font-bold tracking-tight transition-colors ${
+                    isActive ? 'text-vermilion' : 'text-midnight group-hover:text-vermilion'
                   }`}>
                     {link.title}
                   </h3>
-                  <p className="text-xs text-grey font-sans hidden sm:block mt-0.5">
+                  <p className="text-sm text-grey font-sans font-medium hidden sm:block mt-0.5">
                     {link.desc}
                   </p>
                 </div>
               </div>
-              <ArrowRight className="w-5 h-5 text-bone/30 group-hover:text-vermilion group-hover:translate-x-1 transition-all" />
+              <ArrowRight className="w-5 h-5 text-midnight/40 group-hover:text-vermilion group-hover:translate-x-1 transition-all" />
             </Link>
           );
         })}
       </nav>
 
       {/* Bottom Footer Info */}
-      <div className="pt-6 border-t border-bone/10 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-grey gap-4">
+      <div className="pt-6 border-t-2 border-midnight/10 flex flex-col sm:flex-row items-start sm:items-center justify-between text-sm text-grey gap-4">
         <div>
-          <span className="text-bone font-medium">The Man With The Magic Message</span>
+          <span className="text-midnight font-bold block">The Man With The Magic Message</span>
           <p>Keynotes & Masterclasses Across Australasia and Worldwide</p>
         </div>
         <Link
           href="/contact"
           onClick={onClose}
-          className="px-6 py-3 rounded-full bg-vermilion text-bone font-sans uppercase tracking-widest text-xs font-semibold hover:bg-gold transition-colors"
+          className="px-7 py-3.5 rounded-full bg-vermilion text-white font-sans uppercase tracking-widest text-sm font-bold hover:bg-midnight transition-colors shadow-md"
         >
           Book An Engagement
         </Link>

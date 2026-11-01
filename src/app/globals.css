@@ -2,19 +2,19 @@
 
 :root {
   --midnight: #171716;
-  --bone: #F3F0E9;
-  --sand: #E7DED0;
-  --vermilion: #BF4E36;
-  --gold: #B49468;
-  --grey: #898780;
-  --champagne: #FAF7F2;
-  --charcoal: #222220;
+  --bone: #F5F2EB;
+  --sand: #EAE1D3;
+  --vermilion: #C4452C;
+  --gold: #966E22;
+  --grey: #4E4C47;
+  --champagne: #FAF8F4;
+  --charcoal: #E5DCCE;
 
   --background: var(--bone);
   --foreground: var(--midnight);
   --card: var(--sand);
   --card-foreground: var(--midnight);
-  --border: rgba(23, 23, 22, 0.12);
+  --border: rgba(23, 23, 22, 0.16);
 }
 
 @theme {
@@ -33,6 +33,7 @@
 
 /* Base resets & typography */
 html {
+  font-size: 17.5px;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -45,6 +46,7 @@ body {
   font-family: var(--font-sans);
   overflow-x: hidden;
   min-height: 100vh;
+  line-height: 1.6;
 }
 
 ::selection {
